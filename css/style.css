@@ -48,6 +48,8 @@ main {
 
  .new-msg {
      background-color: #7dd1fb;
+     padding: 20px 5px; 
+     display: flex;
  }
 
  .search {
@@ -91,11 +93,21 @@ main {
     width: 50px;
     background-color: white;
     border-radius: 50%;
+    text-align: center;
+    line-height:50px;
+    margin-right: 10px;
  }
 
- .bell i {
-     text-align: center;
+ .search {
+     display: flex;
+     line-height:60px;
  }
+
+ .search i {
+     line-height: 60px;
+     margin: 0 20px;
+ }
+
 
  /* chat section */
 .conversation {
