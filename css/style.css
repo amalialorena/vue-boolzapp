@@ -32,9 +32,12 @@ main {
     background-color: white;
 }
  .user {
+    display: flex;
+    justify-content: space-between;
     height: 70px;
     background-color: #e5e5e5;
     border-right: 2px solid #dadada;
+    font-size: 20px;
  }
 
  .row {
@@ -53,7 +56,48 @@ main {
      border-bottom: 1px solid #dadada;  
  }
 
+ .user-avatar {
+     height: 50px;
+     width: 50px;
+     margin: 10px 5px;
+ }
 
+ .user-avatar img {
+     height: 100%;
+     border-radius: 50%;
+ }
+
+ .user-card {
+     display: flex;
+     font-size: 14px;
+ }
+
+ .user-name {
+    line-height:70px;
+ }
+
+ .utilities {
+     color: #a2a2a2;
+     line-height: 70px;
+     padding-right: 10px;
+ }
+
+ .utilities i {
+    margin: 0 7px;
+ }
+
+ .bell {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+ }
+
+ .bell i {
+     text-align: center;
+ }
+
+ /* chat section */
 .conversation {
     display:flex;
     flex-direction: column;
@@ -68,3 +112,10 @@ main {
     background-color:#f0eae4;
 }
 
+.user-name-friend {
+    padding: 20px 0;
+}
+
+.login-time {
+    color: grey;
+}

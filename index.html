@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>boolzapp</title>
 </head>
@@ -12,8 +13,24 @@
     <main>
         <div id="container">
             <section class="users">
-                <div class="user"></div>
-                <div class="new-msg row"></div>
+                <div class="user">
+                    <div class="user-card">
+                        <div class="user-avatar">
+                            <img src="img/avatar_1.jpg" alt="avatar1">
+                        </div> 
+                        <div class="user-name"> Nome utente</div>
+                    </div>
+                    <div class="utilities">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="new-msg row">
+                    <div class="bell">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                </div>
                 <div class="search"></div>
                 <div class="row"></div>
                 <div class="row"></div>
@@ -23,7 +40,22 @@
 
             </section>
             <section class="conversation">
-                <div class="user"></div>
+                <div class="user">
+                    <div class="user-card">
+                        <div class="user-avatar">
+                            <img src="img/avatar_1.jpg" alt="avatar1">
+                        </div> 
+                        <div class="user-name-friend"> 
+                            <p>Nome utente</p>
+                            <p class="login-time">Ultimo accesso oggi alle 16:15</p>
+                        </div>
+                    </div>
+                    <div class="utilities">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
                 <div class="input-container"></div>
             </section>
         </div>
