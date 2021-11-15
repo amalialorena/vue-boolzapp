@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/background.png);
+    background-repeat: repeat-x;
+}
+
+main {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    height: 94vh;
+    width: 90vw;
+}
+
+/* users column */
+.users {
+    min-width: 300px;
+    width: 30%;
+    background-color: aqua;
+    height: 100%; 
+}
+
+.conversation {
+    width: 70%;
+    background-color: rgb(200, 219, 219);
+    height: 100%;
+}
+
