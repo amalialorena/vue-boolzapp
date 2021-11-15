@@ -101,6 +101,7 @@ main {
  .search {
      display: flex;
      line-height:60px;
+     color:
  }
 
  .search i {
@@ -110,18 +111,14 @@ main {
 
 
  /* chat section */
-.conversation {
+.chat {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
     width: 70%;
     background-color: rgb(200, 219, 219);
     height: 100%;
-}
-
-.input-container {
-    height: 70px;
-    background-color:#f0eae4;
+    background-image: url(../img/chat_bg.png)
 }
 
 .user-name-friend {
@@ -131,3 +128,21 @@ main {
 .login-time {
     color: grey;
 }
+
+.input-container {
+    height: 70px;
+    background-color:#f0eae4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 35px;
+    color:#586063;
+}
+
+input {
+    width: 80%;
+    height: 50px;
+    border: 0;
+    border-radius: 5px;
+}
+
