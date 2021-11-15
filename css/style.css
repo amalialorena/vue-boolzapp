@@ -41,27 +41,27 @@ main {
  }
 
  .row {
-     height: 90px;
-     /* debug */
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     height: 80px;
      border-bottom: 1px solid #dadada;
  }
 
  .new-msg {
      background-color: #7dd1fb;
      padding: 20px 5px; 
-     display: flex;
  }
 
  .search {
      height: 60px;
-     /* debug */
      border-bottom: 1px solid #dadada;  
  }
 
  .user-avatar {
      height: 50px;
      width: 50px;
-     margin: 10px 5px;
+     margin: 0 5px;
  }
 
  .user-avatar img {
@@ -72,6 +72,7 @@ main {
  .user-card {
      display: flex;
      font-size: 14px;
+     align-items: center;
  }
 
  .user-name {
@@ -101,12 +102,23 @@ main {
  .search {
      display: flex;
      line-height:60px;
-     color:
  }
 
  .search i {
      line-height: 60px;
      margin: 0 20px;
+ }
+
+ .last-msg-time {
+     align-self: flex-start;
+     margin-top: 5px;
+     margin-right: 5px;
+     color:#a9aeaf;
+     font-size: 12px;
+ }
+
+ .last-msg {
+     color:#a9aeaf;
  }
 
 
@@ -116,14 +128,12 @@ main {
     flex-direction: column;
     justify-content: space-between;
     width: 70%;
+    min-width: 400px;
     background-color: rgb(200, 219, 219);
     height: 100%;
     background-image: url(../img/chat_bg.png)
 }
 
-.user-name-friend {
-    padding: 20px 0;
-}
 
 .login-time {
     color: grey;
@@ -135,7 +145,7 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 35px;
+    font-size: 25px;
     color:#586063;
 }
 
@@ -146,3 +156,37 @@ input {
     border-radius: 5px;
 }
 
+.chat-bubble-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sent {
+    background-color:#ccfaac;
+    align-self: flex-end;
+    min-width: 40%;
+}
+
+.received {
+    background-color:white;
+    max-width: 40%;
+}
+
+.msg {
+    padding:5px;
+    margin: 5px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.msg .date {
+    align-self: flex-end;
+    font-size: 10px;
+}
+
+.msg .text {
+    margin-top: 10px;
+}
