@@ -2,7 +2,7 @@
 var app = new Vue({
     el: "#container",
     data: {
-        selectedId: null,
+        selectedId: 1,
         contacts: [ 
             {
                 id: 1,
@@ -99,19 +99,15 @@ var app = new Vue({
     },
 
     computed: {
-
+       
     },
 
     methods: {
         addActive(c) {
             this.selectedId = c;
         },
-        test(test1, test2, test3) {
-            console.log(test1, test2, test3)
-        },
-        log(item) {
-            console.log(item)
-        }
+       
+       
     },
 })
 

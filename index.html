@@ -40,7 +40,7 @@
                     <p>Cerca o inizia una nuova chat</p>
                 </div>
     <!-- All'click su contatto creo una classe active -->
-                <div class="row" v-for="contact, i in contacts" :key="i" @click="addActive(contact.id); test(contact.avatar, contact.id, contact.name)" :class="selectedId === contact.id? 'active' : '' " >
+                <div class="row" v-for="contact, i in contacts" :key="i" @click="addActive(contact.id);" :class="selectedId === contact.id? 'active' : '' " >
                     <div class="user-card">
                         <div class="user-avatar">
                             <img :src="'img/avatar'+ contact.avatar +'.jpg'" alt="avatar1">
@@ -58,13 +58,13 @@
             </section>
             <section class="chat">
                 <div class="user">
-                    <div class="user-card">
+                    <div class="user-card" v-for="contact in contacts" v-if="contact.id === selectedId">
                         <div class="user-avatar">
-                            <img src="img/avatar_1.jpg" alt="avatar1">
+                            <img :src="'img/avatar'+ contact.avatar +'.jpg'" alt="avatar">
                         </div> 
                         <div class="user-name-friend"> 
-                            <p>Nome utente</p>
-                            <p class="login-time">Ultimo accesso oggi alle 16:15</p>
+                            <p>{{contact.name}}</p>
+                            <p class="login-time">Ultimo accesso oggi alle {{contact.messages[0].date}}</p>
                         </div>
                     </div>
                     <div class="utilities">
@@ -79,18 +79,10 @@
                     <div class="chat-bubble" v-for="contact in contacts" v-if="contact.id === selectedId">
                         <div class="msg" v-for="message in contact.messages" v-for :class="message.status === 'sent'?'sent':'received'">
                             <p class="text">{{message.text}}</p>
-                            <p class="date">10/01/2021 16:30:22</p>
+                            <p class="date">{{message.date}}</p>
                         </div>
                     </div>
 
-                    <!-- <div class="sent msg">
-                        <p class="text">lorem ipsum amet</p>
-                        <p class="date">10/01/2021 16:30:22</p>
-                    </div> -->
-                    <!-- <div class="received msg">
-                        <p class="text">ipsum</p>
-                        <p class="date">10/01/2021 16:30:22</p>
-                    </div> -->
                 </div>
                 <div class="input-container">
                     <i class="far fa-smile"></i>

@@ -186,7 +186,8 @@ input {
 }
 
 .date {
-    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
     font-size: 10px;
 }
 
