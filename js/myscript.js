@@ -3,6 +3,7 @@ var app = new Vue({
     el: "#container",
     data: {
         selectedId: 1,
+        text:"",
         contacts: [ 
             {
                 id: 1,
@@ -106,8 +107,19 @@ var app = new Vue({
         addActive(c) {
             this.selectedId = c;
         },
-       
-       
+        getLastMessageDate() {
+            let contact = this.contacts.filter(contact => contact.id === this.selectedId)[0];
+            let lastMessage = contact.messages[contact.messages.length - 1];
+            console.log(lastMessage);
+            return lastMessage.date;
+        },
+
+        submit(){
+          
+            console.log(this.text)
+
+        }
+        
     },
 })
 

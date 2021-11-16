@@ -64,7 +64,7 @@
                         </div> 
                         <div class="user-name-friend"> 
                             <p>{{contact.name}}</p>
-                            <p class="login-time">Ultimo accesso oggi alle {{contact.messages[0].date}}</p>
+                            <p class="login-time">Ultimo accesso oggi alle {{getLastMessageDate()}}</p>
                         </div>
                     </div>
                     <div class="utilities">
@@ -86,7 +86,7 @@
                 </div>
                 <div class="input-container">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder=" Scrivi un messaggio">
+                    <input type="text" placeholder=" Scrivi un messaggio" v-model="text" @keyup.enter="submit" >
                     <i class="fas fa-microphone"></i>
                 </div>
             </section>
