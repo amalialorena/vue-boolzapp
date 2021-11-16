@@ -76,10 +76,13 @@
                 <!-- quando il contatto è cliccato, cambiano i contenuti dei messaggi in chat e i dati dell'utente in alto 
                     generare in pagina i testi dinamici-->
                 <div class="chat-bubble-container">
-                    <div class="msg" v-for="message in contacts[0].messages" :class="message.status === 'sent'?'sent':'received'">
-                        <p class="text">{{message.text}}</p>
-                        <p class="date">10/01/2021 16:30:22</p>
+                    <div class="chat-bubble" v-for="contact in contacts" v-if="contact.id === selectedId">
+                        <div class="msg" v-for="message in contact.messages" v-for :class="message.status === 'sent'?'sent':'received'">
+                            <p class="text">{{message.text}}</p>
+                            <p class="date">10/01/2021 16:30:22</p>
+                        </div>
                     </div>
+
                     <!-- <div class="sent msg">
                         <p class="text">lorem ipsum amet</p>
                         <p class="date">10/01/2021 16:30:22</p>

@@ -73,11 +73,6 @@ var app = new Vue({
                         text: 'Ah scusa!',
                         status: 'received'
                     },
-                    {
-                        date: '28/03/2020 16:15:22',
-                        text: 'Ah scusa!',
-                        status: 'received'
-                    },
                 ],
             },
 

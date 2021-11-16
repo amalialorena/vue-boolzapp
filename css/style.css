@@ -174,20 +174,23 @@ input {
     max-width: 40%;
 }
 
+.chat-bubble{
+    display: flex;
+    flex-direction: column;
+} 
+
 .msg {
     padding:5px;
     margin: 5px 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
+    border-radius: 10px;  
 }
 
-.msg .date {
+.date {
     align-self: flex-end;
     font-size: 10px;
 }
 
-.msg .text {
+.text {
     margin-top: 10px;
 }
 
