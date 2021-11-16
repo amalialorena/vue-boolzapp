@@ -1,4 +1,4 @@
-// cerare l'array di oggetti con le info degli utenti 
+
 var app = new Vue({
     el: "#container",
     data: {
@@ -103,10 +103,20 @@ var app = new Vue({
         ],   
     },
 
+    computed: {
+
+    },
+
     methods: {
         addActive(c) {
             this.selectedId = c;
+        },
+        test(test1, test2, test3) {
+            console.log(test1, test2, test3)
+        },
+        log(item) {
+            console.log(item)
         }
-    }
+    },
 })
 
