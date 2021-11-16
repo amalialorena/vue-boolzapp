@@ -2,8 +2,10 @@
 var app = new Vue({
     el: "#container",
     data: {
+        selectedId: null,
         contacts: [ 
             {
+                id: 1,
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
@@ -27,6 +29,7 @@ var app = new Vue({
             },  
            
             {   
+                id: 2,
                 name: 'Fabio',
                 avatar: '_2',
                 visible: true,
@@ -50,6 +53,7 @@ var app = new Vue({
             }, 
 
             {
+                id: 3,
                 name: 'Samuele',
                 avatar: '_3',
                 visible: true,
@@ -77,7 +81,8 @@ var app = new Vue({
                 ],
             },
 
-            {
+            {   
+                id: 4,
                 name: 'Luisa',
                 avatar: '_4',
                 visible: true,
@@ -96,6 +101,12 @@ var app = new Vue({
                 ],
             },
         ],   
+    },
+
+    methods: {
+        addActive(c) {
+            this.selectedId = c;
+        }
     }
 })
 

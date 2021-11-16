@@ -190,3 +190,7 @@ input {
 .msg .text {
     margin-top: 10px;
 }
+
+.active {
+    background-color: #e4e6e6;
+}
