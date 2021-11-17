@@ -131,7 +131,6 @@ var app = new Vue({
             return lastMessage.length - 1;
         },
       
-
         submit(){
            const userMsg = {
                 date: '10/01/2020 15:50:00',
