@@ -3,7 +3,7 @@ var app = new Vue({
     el: "#container",
     data: {
         selectedId: 1,
-        text:"",
+        userMsg: "",
         contacts: [ 
             {
                 id: 1,
@@ -100,13 +100,14 @@ var app = new Vue({
     },
 
     computed: {
-       
+        
     },
 
     methods: {
         addActive(c) {
             this.selectedId = c;
-        },
+        }, 
+
         getLastMessageDate() {
             let contact = this.contacts.filter(contact => contact.id === this.selectedId)[0];
             let lastMessage = contact.messages[contact.messages.length - 1];
@@ -114,12 +115,31 @@ var app = new Vue({
             return lastMessage.date;
         },
 
-        submit(){
-          
-            console.log(this.text)
+        getSelectedContact() {
+            let contact = this.contacts.filter(contact => contact.id === this.selectedId)[0];
+            return contact      
+        },
 
-        }
-        
+        getSelectedMessages() {
+
+            let messagesArr = this.getSelectedContact().messages
+
+                return messagesArr;
+        },
+
+        submit(){
+           const newObj = {
+                date: '10/01/2020 15:50:00',
+                text: this.userMsg,
+                status: 'sent'
+            };
+            
+            let selectedMsg = this.getSelectedMessages();
+
+            selectedMsg.push(newObj);
+            console.log("selected msg arr dopo", selectedMsg.length);
+            this.userMsg = ""
+        }, 
     },
 })
 
