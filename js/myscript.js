@@ -128,7 +128,7 @@ var app = new Vue({
         },
 
         submit(){
-           const newObj = {
+           const userMsg = {
                 date: '10/01/2020 15:50:00',
                 text: this.userMsg,
                 status: 'sent'
@@ -136,9 +136,20 @@ var app = new Vue({
             
             let selectedMsg = this.getSelectedMessages();
 
-            selectedMsg.push(newObj);
-            console.log("selected msg arr dopo", selectedMsg.length);
-            this.userMsg = ""
+            selectedMsg.push(userMsg);
+            
+            this.userMsg = "";
+
+            setTimeout(autoAnswer, 1000);
+
+            function autoAnswer(){
+                const pcAnswer = {
+                    date: '10/01/2020 15:50:00',
+                    text: "ok",
+                    status: 'received'
+                };
+                selectedMsg.push(pcAnswer);
+            }
         }, 
     },
 })
