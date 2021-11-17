@@ -4,6 +4,7 @@ var app = new Vue({
     data: {
         selectedId: 1,
         userMsg: "",
+        search: "",
         contacts: [ 
             {
                 id: 1,
@@ -121,11 +122,15 @@ var app = new Vue({
         },
 
         getSelectedMessages() {
-
-            let messagesArr = this.getSelectedContact().messages
-
-                return messagesArr;
+            let messagesArr = this.getSelectedContact().messages;
+            return messagesArr;
         },
+
+        getLastMessage() {
+            let lastMessage = this.getSelectedMessages();
+            return lastMessage.length - 1;
+        },
+      
 
         submit(){
            const userMsg = {
@@ -150,6 +155,9 @@ var app = new Vue({
                 };
                 selectedMsg.push(pcAnswer);
             }
+
+            console.log("lunghezza array msg", selectedMsg.length);
+            console.log(this.getLastMessage()) ;
         }, 
     },
 })

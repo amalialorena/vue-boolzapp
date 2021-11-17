@@ -37,7 +37,7 @@
                 </div>
                 <div class="search">
                     <i class="fas fa-search"></i>
-                    <p>Cerca o inizia una nuova chat</p>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search" >
                 </div>
     <!-- All'click su contatto creo una classe active -->
                 <div class="row" v-for="contact, i in contacts" :key="i" @click="addActive(contact.id);" :class="selectedId === contact.id? 'active' : '' " >
@@ -47,7 +47,7 @@
                         </div> 
                         <div class="user-name-friend"> 
                             <p>{{contact.name}}</p>
-                            <p class="last-msg">Last msg...</p>
+                            <p class="last-msg">last msg...</p>
                         </div>
                     </div>
                     <div class="last-msg-time">
@@ -64,7 +64,7 @@
                         </div> 
                         <div class="user-name-friend"> 
                             <p>{{contact.name}}</p>
-                            <p class="login-time">Ultimo accesso oggi alle </p>
+                            <p class="login-time">Ultimo accesso oggi alle {{getSelectedMessages()[getLastMessage()].date}} </p>
                         </div>
                     </div>
                     <div class="utilities">
