@@ -53,6 +53,11 @@ main {
      height: 80px;
      border-bottom: 1px solid #dadada;
      position: relative;
+     cursor: pointer;    
+ }
+
+ .row:hover {
+    background-color:#ebebeb69;
  }
 
  .new-msg {
