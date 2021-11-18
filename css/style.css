@@ -56,7 +56,7 @@ main {
      cursor: pointer;    
  }
 
- .row:hover {
+ .row.friend:hover {
     background-color:#ebebeb69;
  }
 
@@ -147,6 +147,10 @@ main {
     overflow-y: auto;  
 }
 
+.active {
+    background-color: #e4e6e6;
+}
+
  /* chat section */
 .chat {
     display:flex;
@@ -215,14 +219,13 @@ input {
 .date {
     display: flex;
     justify-content: flex-end;
-    font-size: 10px;
+    font-size: 11px;
+    color:#a9aeaf;
 }
 
 .text {
     margin-top: 10px;
 }
 
-.active {
-    background-color: #e4e6e6;
-}
+
 
