@@ -5,6 +5,7 @@ var app = new Vue({
         selectedId: 1,
         userMsg: "",
         search: "",
+        updatedDate: dayjs().format('YYYY/MM/DD HH:mm:ss'),
         contacts: [ 
             {
                 id: 1,
@@ -24,7 +25,7 @@ var app = new Vue({
                     },  
                     {
                         date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
+                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                         status: 'received'
                     },
                 ],   
@@ -101,7 +102,7 @@ var app = new Vue({
     },
 
     computed: {
-        
+            
     },
 
     methods: {
@@ -130,10 +131,19 @@ var app = new Vue({
             let lastMessage = this.getSelectedMessages();
             return lastMessage.length - 1;
         },
+
+        autoAnswer(selectedMsg){
+            const pcAnswer = {
+                date: dayjs().format('YYYY/MM/DD HH:mm:ss'),
+                text: "ok",
+                status: 'received'
+            };
+            selectedMsg.push(pcAnswer);
+        },
       
         submit(){
            const userMsg = {
-                date: '10/01/2020 15:50:00',
+                date: dayjs().format('YYYY/MM/DD HH:mm:ss'),
                 text: this.userMsg,
                 status: 'sent'
             };
@@ -144,16 +154,9 @@ var app = new Vue({
             
             this.userMsg = "";
 
-            setTimeout(autoAnswer, 1000);
-
-            function autoAnswer(){
-                const pcAnswer = {
-                    date: '10/01/2020 15:50:00',
-                    text: "ok",
-                    status: 'received'
-                };
-                selectedMsg.push(pcAnswer);
-            }
+            setTimeout(() => {
+                this.autoAnswer(selectedMsg)
+            }, 1000);
 
             console.log("lunghezza array msg", selectedMsg.length);
             console.log(this.getLastMessage()) ;

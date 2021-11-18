@@ -9,6 +9,7 @@ body {
     background-repeat: repeat-x;
     height: 100%;
     background-color: #d3d3c8;
+    font-family: ‘Lato’, sans-serif;
 }
 
 main {
@@ -74,7 +75,6 @@ main {
  .user-card {
      display: flex;
      font-size: 14px;
-     align-items: center;
  }
 
  .user-name {
@@ -121,6 +121,9 @@ main {
 
  .last-msg {
      color:#a9aeaf;
+     overflow: hidden;
+     width: 100px;
+     height: 20px;
  }
 
 
