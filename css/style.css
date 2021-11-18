@@ -39,6 +39,7 @@ main {
     background-color: #e5e5e5;
     border-right: 2px solid #dadada;
     font-size: 20px;
+    align-items: center;
  }
 
  .contact-name {
@@ -80,6 +81,7 @@ main {
  .user-card {
      display: flex;
      font-size: 14px;
+     align-items: center;
  }
 
  .user-name {
@@ -135,6 +137,11 @@ main {
      width: 300px;
  }
 
+ .contacts-container {
+    overflow-x: hidden;
+    height: calc(100% - 220px);
+    overflow-y: scroll;  
+}
 
  /* chat section */
 .chat {
@@ -171,21 +178,21 @@ input {
 }
 
 .chat-bubble-container {
-    height: 100%;
+    height:calc(100% - 140px);
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .sent {
     background-color:#ccfaac;
-    align-self: flex-end;
-    min-width: 40%;
+    align-self: flex-end;  
 }
 
 .received {
-    background-color:white;
-    max-width: 40%;
+    background-color:white;  
 }
 
 .chat-bubble{
@@ -196,7 +203,9 @@ input {
 .msg {
     padding: 5px 10px;
     margin: 5px 20px;
-    border-radius: 10px;  
+    border-radius: 10px; 
+    min-width: 40%;
+    max-width: 40%; 
 }
 
 .date {
@@ -212,3 +221,4 @@ input {
 .active {
     background-color: #e4e6e6;
 }
+
