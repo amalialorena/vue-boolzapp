@@ -55,23 +55,6 @@
                             {{contact.messages[contact.messages.length -1].date}}
                         </div>
                     </div>
-
-                    <!-- debug -->
-
-                    <div class="row" v-for="contact, i in contacts" :key="i" @click="addActive(contact.id);" :class="selectedId === contact.id? 'active' : '' " v-if="contact.name.toLowerCase().includes(search.toLowerCase())" >
-                        <div class="user-card">
-                            <div class="user-avatar">
-                                 <img :src="'img/avatar'+ contact.avatar +'.jpg'" alt="avatar1">
-                            </div> 
-                            <div class="user-name-friend"> 
-                                <p class="contact-name">{{contact.name}}</p>
-                                <p class="last-msg">{{contact.messages[contact.messages.length -1].text}}</p>
-                            </div>
-                        </div>
-                        <div class="last-msg-time">
-                            {{contact.messages[contact.messages.length -1].date}}
-                        </div>
-                    </div>
                 </div>
                 
             </section>

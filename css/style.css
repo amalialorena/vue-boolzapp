@@ -109,7 +109,6 @@ main {
  }
 
  .search {
-     display: flex;
      line-height:60px;
  }
 
@@ -140,7 +139,7 @@ main {
  .contacts-container {
     overflow-x: hidden;
     height: calc(100% - 220px);
-    overflow-y: scroll;  
+    overflow-y: auto;  
 }
 
  /* chat section */
@@ -183,7 +182,7 @@ input {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .sent {
