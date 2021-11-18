@@ -41,12 +41,17 @@ main {
     font-size: 20px;
  }
 
+ .contact-name {
+     margin-bottom: 5px;
+ }
+
  .row {
      display: flex;
      justify-content: space-between;
      align-items: center;
      height: 80px;
      border-bottom: 1px solid #dadada;
+     position: relative;
  }
 
  .new-msg {
@@ -112,18 +117,22 @@ main {
  }
 
  .last-msg-time {
-     align-self: flex-start;
      margin-top: 5px;
      margin-right: 5px;
      color:#a9aeaf;
      font-size: 12px;
+     position: absolute;
+     top: 0;
+     right: 0;
  }
 
  .last-msg {
      color:#a9aeaf;
      overflow: hidden;
-     width: 100px;
-     height: 20px;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     height: 17px;
+     width: 300px;
  }
 
 
