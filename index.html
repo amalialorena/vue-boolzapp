@@ -47,6 +47,7 @@
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search" >
                 </div>
+                <!-- ciclo per generare in pagina i dati dei contatti -->
                 <div class="contacts-container">
                     <div class="row friend" v-for="contact, i in contacts" :key="i" @click="addActive(contact.id);" :class="selectedId === contact.id? 'active' : '' " v-if="contact.name.toLowerCase().includes(search.toLowerCase())" >
                         <div class="user-card">
@@ -62,11 +63,11 @@
                             {{contact.messages[contact.messages.length -1].date}}
                         </div>
                     </div>
-                </div>
-                
+                </div>  
             </section>
             <section class="chat">
                 <div class="user">
+                    <!-- ciclo per generare i dati relativi all'utente attivo -->
                     <div class="user-card" v-for="contact in contacts" v-if="contact.id === selectedId">
                         <div class="user-avatar">
                             <img :src="'img/avatar'+ contact.avatar +'.jpg'" alt="avatar">
@@ -92,7 +93,6 @@
                             <p class="date">{{message.date}}</p>
                         </div>
                     </div>
-
                 </div>
                 <div class="input-container">
                     <i class="far fa-smile"></i>
