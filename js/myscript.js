@@ -5,7 +5,6 @@ var app = new Vue({
         selectedId: 1,
         userMsg: "",
         search: "",
-        updatedDate: dayjs().format('YYYY/MM/DD HH:mm:ss'),
         contacts: [ 
             {
                 id: 1,
@@ -110,12 +109,12 @@ var app = new Vue({
             this.selectedId = c;
         }, 
 
-        getLastMessageDate() {
-            let contact = this.contacts.filter(contact => contact.id === this.selectedId)[0];
-            let lastMessage = contact.messages[contact.messages.length - 1];
-            console.log(lastMessage);
-            return lastMessage.date;
-        },
+        // getLastMessageDate() {
+        //     let contact = this.contacts.filter(contact => contact.id === this.selectedId)[0];
+        //     let lastMessage = contact.messages[contact.messages.length - 1];
+        //     console.log(lastMessage);
+        //     return lastMessage.date;
+        // },
 
         getSelectedContact() {
             let contact = this.contacts.filter(contact => contact.id === this.selectedId)[0];
@@ -157,9 +156,6 @@ var app = new Vue({
             setTimeout(() => {
                 this.autoAnswer(selectedMsg)
             }, 1000);
-
-            console.log("lunghezza array msg", selectedMsg.length);
-            console.log(this.getLastMessage()) ;
         }, 
     },
 })

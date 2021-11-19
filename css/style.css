@@ -1,9 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+/* containers */
 body {
     background-image: url(../img/background.png);
     background-repeat: repeat-x;
@@ -32,6 +32,7 @@ main {
     height: 100%; 
     background-color: white;
 }
+
  .user {
     display: flex;
     justify-content: space-between;
@@ -42,61 +43,57 @@ main {
     align-items: center;
  }
 
- .contact-name {
-     margin-bottom: 5px;
- }
-
  .row {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     height: 80px;
-     border-bottom: 1px solid #dadada;
-     position: relative;
-     cursor: pointer;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid #dadada;
+    position: relative;
+    cursor: pointer;    
  }
 
  .row.friend:hover {
-    background-color:#ebebeb69;
+    background-color: #ebebeb69;
  }
 
  .new-msg {
-     background-color: #7dd1fb;
-     padding: 20px 5px; 
+    background-color: #7dd1fb;
+    padding: 20px 5px; 
     justify-content: flex-start;
     display: flex;
  }
 
  .search {
-     height: 60px;
-     border-bottom: 1px solid #dadada;  
+    height: 60px;
+    border-bottom: 1px solid #dadada;  
  }
 
  .user-avatar {
-     height: 50px;
-     width: 50px;
-     margin: 0 5px;
+    height: 50px;
+    width: 50px;
+    margin: 0 5px;
  }
 
  .user-avatar img {
-     height: 100%;
-     border-radius: 50%;
+    height: 100%;
+    border-radius: 50%;
  }
 
  .user-card {
-     display: flex;
-     font-size: 14px;
-     align-items: center;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
  }
 
  .user-name {
-    line-height:70px;
+    line-height: 70px;
  }
 
  .utilities {
-     color: #a2a2a2;
-     line-height: 70px;
-     padding-right: 10px;
+    color: #a2a2a2;
+    line-height: 70px;
+    padding-right: 10px;
  }
 
  .utilities i {
@@ -109,20 +106,20 @@ main {
     background-color: white;
     border-radius: 50%;
     text-align: center;
-    line-height:50px;
+    line-height: 50px;
     margin-right: 10px;
  }
  .bell i {
-     color: #6dc6fa;
+    color: #6dc6fa;
  }
 
  .search {
-     line-height:60px;
+    line-height: 60px;
  }
 
  .search i {
-     line-height: 60px;
-     margin: 0 20px;
+    line-height: 60px;
+    margin: 0 20px;
  }
 
 .notifications {
@@ -133,22 +130,23 @@ main {
 }
 
  .last-msg-time {
-     margin-top: 5px;
-     margin-right: 5px;
-     color:#a9aeaf;
-     font-size: 12px;
-     position: absolute;
-     top: 0;
-     right: 0;
+    margin-top: 5px;
+    margin-right: 5px;
+    color: #a9aeaf;
+    font-size: 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
  }
 
  .last-msg {
-     color:#a9aeaf;
-     overflow: hidden;
-     text-overflow: ellipsis;
-     white-space: nowrap;
-     height: 17px;
-     width: 300px;
+    color: #a9aeaf;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 17px;
+    width: 300px;
+    margin-top: 5px;
  }
 
  .contacts-container {
@@ -161,9 +159,17 @@ main {
     background-color: #e4e6e6;
 }
 
+.drop-down-arrow {
+    display: inline-block;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 7px;
+    right: 16px;
+}
+
  /* chat section */
 .chat {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 70%;
@@ -185,7 +191,7 @@ main {
     justify-content: space-around;
     align-items: center;
     font-size: 25px;
-    color:#586063;
+    color: #586063;
 }
 
 input {
@@ -196,7 +202,7 @@ input {
 }
 
 .chat-bubble-container {
-    height:calc(100% - 140px);
+    height: calc(100% - 140px);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -205,15 +211,15 @@ input {
 }
 
 .sent {
-    background-color:#ccfaac;
+    background-color: #ccfaac;
     align-self: flex-end;  
 }
 
 .received {
-    background-color:white;  
+    background-color: white;  
 }
 
-.chat-bubble{
+.chat-bubble {
     display: flex;
     flex-direction: column;
 } 
@@ -224,13 +230,14 @@ input {
     border-radius: 10px; 
     min-width: 40%;
     max-width: 40%; 
+    position: relative;
 }
 
 .date {
     display: flex;
     justify-content: flex-end;
     font-size: 11px;
-    color:#a9aeaf;
+    color: #a9aeaf;
 }
 
 .text {

@@ -21,7 +21,7 @@
                         <div class="user-avatar">
                             <img src="img/avatar_1.jpg" alt="avatar1">
                         </div> 
-                        <div class="user-name"> Amalia</div>
+                        <div class="user-name">Amalia</div>
                     </div>
                     <div class="utilities">
                         <i class="fas fa-circle-notch"></i>
@@ -38,7 +38,11 @@
                         <p class="notifications">Attiva notifiche desktop</p>
                     </div>
                 </div>
-
+                <!-- search passi logici 
+                    1 salvare in una variabile il valore dell'input
+                    2 confrontare il valore dell'input con i nomi dei contatti
+                        se corrispondono ,stampare in pagina solo i contatti trovati
+                -->
                 <div class="search">
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search" >
@@ -83,6 +87,7 @@
                 <div class="chat-bubble-container">
                     <div class="chat-bubble" v-for="contact in contacts" v-if="contact.id === selectedId">
                         <div class="msg" v-for="message in contact.messages" :class="message.status === 'sent'?'sent':'received'">
+                            <span class="drop-down-arrow">&rangle;</span>  
                             <p class="text">{{message.text}}</p>
                             <p class="date">{{message.date}}</p>
                         </div>
@@ -104,8 +109,3 @@
 </body>
 </html> 
 
-<!-- search passi logici 
-    1 salvare in una variabile il valore dell'input
-    2 fare una funzione che mi confronta il valore dell'input con i nomi dei contatti
-        se corrispondono ,stampare in pagina solo i contatti trovati
--->
