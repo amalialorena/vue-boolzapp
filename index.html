@@ -56,10 +56,10 @@
                             </div> 
                             <div class="user-name-friend"> 
                                 <p class="contact-name">{{contact.name}}</p>
-                                <p class="last-msg">{{contact.messages[contact.messages.length -1].text}}</p>
+                                <p class="last-msg" v-if="contact.messages[contact.messages.length -1]">{{contact.messages[contact.messages.length -1].text}}</p>
                             </div>
                         </div>
-                        <div class="last-msg-time">
+                        <div class="last-msg-time" v-if="contact.messages[contact.messages.length -1]">
                             {{contact.messages[contact.messages.length -1].date}}
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                         </div> 
                         <div class="user-name-friend"> 
                             <p>{{contact.name}}</p>
-                            <p class="login-time">Ultimo accesso oggi alle {{getSelectedMessages()[getLastMessage()].date}} </p>
+                            <p class="login-time" v-if="selectedMessages[lastMessage]">Ultimo accesso oggi alle {{selectedMessages[lastMessage].date}} </p>
                         </div>
                     </div>
                     <div class="utilities">
@@ -85,11 +85,15 @@
                 </div>
                 <!-- quando il contatto è cliccato, cambiano i contenuti dei messaggi in chat e i dati dell'utente in alto 
                     generare in pagina i testi dinamici-->
-                <div class="chat-bubble-container">
+                <div class="chat-bubble-container" @click="resetMenu">
                     <div class="chat-bubble" v-for="contact in contacts" v-if="contact.id === selectedId">
-                        <div class="msg" v-for="message in contact.messages" :class="message.status === 'sent'?'sent':'received'">
-                            <span class="drop-down-arrow">&rangle;</span>  
-                            <p class="text">{{message.text}}</p>
+                        <div class="msg" v-for="message, n in contact.messages"  key="n" :class="message.status === 'sent'?'sent':'received'">
+                            <span class="drop-down-arrow" @click="showMenu($event, n)" >&rangle;</span>  
+                                <div class="dropdown-content" :class="message.opened ? 'show-menu' : '' ">
+                                    <p class="info">Message info</p>
+                                    <p class="delete" @click="deleteMessage(n)"> Delete message</p>
+                                </div>
+                            <p class="text" v-if="message.text">{{message.text}}</p>
                             <p class="date">{{message.date}}</p>
                         </div>
                     </div>

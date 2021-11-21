@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* containers */
 body {
     background-image: url(../img/background.png);
@@ -109,6 +110,7 @@ main {
     line-height: 50px;
     margin-right: 10px;
  }
+
  .bell i {
     color: #6dc6fa;
  }
@@ -159,14 +161,6 @@ main {
     background-color: #e4e6e6;
 }
 
-.drop-down-arrow {
-    display: inline-block;
-    transform: rotate(90deg);
-    position: absolute;
-    top: 7px;
-    right: 16px;
-}
-
  /* chat section */
 .chat {
     display: flex;
@@ -178,7 +172,6 @@ main {
     height: 100%;
     background-image: url(../img/chat_bg.png)
 }
-
 
 .login-time {
     color: grey;
@@ -233,6 +226,10 @@ input {
     position: relative;
 }
 
+.msg:hover .drop-down-arrow {
+    display: inline-block;
+}
+
 .date {
     display: flex;
     justify-content: flex-end;
@@ -242,6 +239,33 @@ input {
 
 .text {
     margin-top: 10px;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #f1f1f1;
+    top: 25px;
+    right: 5px;
+    display: none;
+    z-index: 1;
+}
+
+.delete, .info {
+    margin: 25px;
+    cursor: pointer;
+}
+
+.drop-down-arrow {
+    transform: rotate(90deg);
+    position: absolute;
+    top: -7px;
+    right: 10px;
+    padding: 19px;
+    display: none;
+}
+
+.show-menu.dropdown-content{
+    display: block;
 }
 
 

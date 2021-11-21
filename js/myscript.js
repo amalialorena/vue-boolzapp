@@ -87,12 +87,12 @@ var app = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
-                        status: 'sent'
+                        status: 'sent',
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Si, ma preferirei andare al cinema',
-                        status: 'received'
+                        status: 'received',
                     },
 
                 ],
@@ -101,35 +101,23 @@ var app = new Vue({
     },
 
     computed: {
-            
+        selectedContact: function () {
+            let contact = this.contacts.filter(contact => contact.id === this.selectedId)[0];
+            return contact  ;    
+        },
+        selectedMessages: function () {
+            let messagesArr = this.selectedContact.messages;
+            return messagesArr;
+        },
+        lastMessage() {
+            return this.selectedMessages.length - 1;
+        },
     },
 
     methods: {
         addActive(c) {
             this.selectedId = c;
         }, 
-
-        // getLastMessageDate() {
-        //     let contact = this.contacts.filter(contact => contact.id === this.selectedId)[0];
-        //     let lastMessage = contact.messages[contact.messages.length - 1];
-        //     console.log(lastMessage);
-        //     return lastMessage.date;
-        // },
-
-        getSelectedContact() {
-            let contact = this.contacts.filter(contact => contact.id === this.selectedId)[0];
-            return contact      
-        },
-
-        getSelectedMessages() {
-            let messagesArr = this.getSelectedContact().messages;
-            return messagesArr;
-        },
-
-        getLastMessage() {
-            let lastMessage = this.getSelectedMessages();
-            return lastMessage.length - 1;
-        },
 
         autoAnswer(selectedMsg){
             const pcAnswer = {
@@ -147,7 +135,7 @@ var app = new Vue({
                 status: 'sent'
             };
             
-            let selectedMsg = this.getSelectedMessages();
+            let selectedMsg = this.selectedMessages;
 
             selectedMsg.push(userMsg);
             
@@ -157,6 +145,29 @@ var app = new Vue({
                 this.autoAnswer(selectedMsg)
             }, 1000);
         }, 
+
+        deleteMessage(n) {
+            console.log({ n });
+            this.selectedMessages.splice(n, 1);
+        },
+
+        showMenu(e, n) {
+            e.stopPropagation();
+
+            this.selectedMessages.forEach((message) => {
+                message.opened = false;
+            })
+
+            this.selectedMessages[n].opened = true;
+            this.$forceUpdate();
+        },
+
+        resetMenu() {
+            this.selectedMessages.forEach((message) => {
+                message.opened = false;
+            })
+            this.$forceUpdate();
+        }
     },
 })
 
