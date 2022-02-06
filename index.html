@@ -14,7 +14,7 @@
 <body>
     <!-- creare il layout  -->
     <main>
-        <div id="container">
+        <div id="container" @click="resetMenu">
             <section class="users">
                 <div class="user">
                     <div class="user-card">
@@ -77,7 +77,7 @@
                             <p class="login-time" v-if="selectedMessages[lastMessage]">Ultimo accesso oggi alle {{selectedMessages[lastMessage].date}} </p>
                         </div>
                     </div>
-                    <div class="utilities">
+                    <div class="utilities active-contact">
                         <i class="fas fa-search"></i>
                         <i class="fas fa-paperclip"></i>
                         <i class="fas fa-ellipsis-v"></i>
@@ -85,7 +85,7 @@
                 </div>
                 <!-- quando il contatto è cliccato, cambiano i contenuti dei messaggi in chat e i dati dell'utente in alto 
                     generare in pagina i testi dinamici-->
-                <div class="chat-bubble-container" @click="resetMenu">
+                <div class="chat-bubble-container">
                     <div class="chat-bubble" v-for="contact in contacts" v-if="contact.id === selectedId">
                         <div class="msg" v-for="message, n in contact.messages"  key="n" :class="message.status === 'sent'?'sent':'received'">
                             <span class="drop-down-arrow" @click="showMenu($event, n)" >&rangle;</span>  

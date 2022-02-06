@@ -97,6 +97,12 @@ main {
     padding-right: 10px;
  }
 
+ @media (max-width: 840px){
+     .utilities.active-contact {
+        display: none;
+     }
+ }
+
  .utilities i {
     margin: 0 7px;
  }
